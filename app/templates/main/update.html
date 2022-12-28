@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Edit "{{ expense['name'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-sm">
+  <form action="{{ url_for('main.delete', id=expense['id']) }}" method="post">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure?');">Delete</button>
+    </div>
+  </form>
+
+  <h1>Update Expense</h1>
+
+  <form method="post">
+      <div class="form-floating mb-3">
+          <input name="name" value="{{ request.form['name'] or expense['name'] }}" type="text" class="form-control" id="floatingInput">
+          <label for="floatingInput">Product Name</label>
+      </div>
+
+      <div class="form-floating mb-3">
+          <input name="price" value="{{ request.form['expense'] or expense['price'] }}" type="text" class="form-control" id="floatingPassword">
+          <label for="floatingPassword">Price</label>
+      </div>
+
+    <button type="submit" class="btn btn-primary btn-lg">Save</button>
+    <a href="{{ url_for('main.index') }}" class="btn btn-secondary btn-lg">Cancel</a>
+  </form>
+    </div>
+{% endblock %}
