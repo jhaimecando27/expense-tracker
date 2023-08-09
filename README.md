@@ -1,5 +1,8 @@
 # Expense Tracker
 
+> **Note**
+Won't be maintaining the original final project output. I will be creating another version of this type of project.
+
 ##### Table of Contents
 - [Requirements](#requirements)
 - [Project Layout](#project-layout)
